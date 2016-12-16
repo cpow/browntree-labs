@@ -1,19 +1,47 @@
 body {
-  background-color: $light-gray;
   color: $medium-gray;
 }
 
-.delete-me {
+.container {
   align-items: center;
   display: flex;
   justify-content: center;
   height: 100vh;
+  text-align: center;
 
-  .container {
-    text-align: center;
-
-    h1 {
-      font-weight: 200;
-    }
+  h1 {
+    font-weight: 400;
   }
 }
+
+.hero {
+  $large-screen: 50em !default;
+  align-items: center;
+  background: image-url("background-image.png");
+  background-position: right;
+  background-size: none;
+  display: flex;
+  justify-content: center;
+  min-height: 25em;
+  padding: 2em;
+
+  @include media($large-screen) {
+    background-position: left;
+    background-size: cover;
+    justify-content: flex-end;
+  }
+
+  .hero-content {
+    max-width: 20em;
+    text-align: center;
+
+    @include media($large-screen) {
+      text-align: left;
+    }
+  }
+
+  .hero-logo {
+    margin: auto;
+  }
+}
+
